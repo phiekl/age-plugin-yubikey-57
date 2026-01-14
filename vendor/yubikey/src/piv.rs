@@ -565,8 +565,11 @@ impl Key {
             };
 
             if !buf.is_empty() {
-                let cert = Certificate::from_bytes(buf)?;
-                keys.push(Key { slot, cert });
+                match Certificate::from_bytes(buf) {
+                    Ok(cert) => keys.push(Key { slot, cert }),
+                    Err(Error::InvalidObject) => {},
+                    Err(other) => return Err(other),
+                }
             }
         }
 
