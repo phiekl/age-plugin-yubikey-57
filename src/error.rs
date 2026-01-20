@@ -96,8 +96,9 @@ impl fmt::Debug for Error {
             Error::Io(e) => wlnfl!(f, "err-io", err = e.to_string())?,
             Error::ManagementKeyAuth => {
                 let aes_url = "https://github.com/str4d/age-plugin-yubikey/issues/92";
+                let aes_url2 = "https://github.com/phiekl/yk-piv-age-keygen";
                 wlnfl!(f, "err-mgmt-key-auth")?;
-                wlnfl!(f, "rec-mgmt-key-auth", aes_url = aes_url)?;
+                wlnfl!(f, "rec-mgmt-key-auth", aes_url = aes_url, aes_url2 = aes_url2)?;
                 wlnfl!(
                     f,
                     "rec-change-mgmt-key",

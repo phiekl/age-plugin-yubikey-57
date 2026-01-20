@@ -191,6 +191,7 @@ err-mgmt-key-auth = Failed to authenticate with the PIN-protected management key
 rec-mgmt-key-auth =
     Check whether your management key is using the TDES algorithm.
     AES is not supported yet: {$aes_url}
+    A workaround is available: {$aes_url2}
 err-custom-mgmt-key = Custom unprotected non-TDES management keys are not supported.
 rec-change-mgmt-key =
     You can use the {-yubikey} Manager CLI to change to a protected management key:
